@@ -1,0 +1,36 @@
+@LibHub.UserService_HostAddress = http://localhost:5152
+
+### Register a new user
+POST {{LibHub.UserService_HostAddress}}/api/users/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "password": "SecurePassword123!"
+}
+
+### Register another user (to test duplicate email)
+POST {{LibHub.UserService_HostAddress}}/api/users/register
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "email": "john.doe@example.com",
+  "password": "AnotherPassword456!"
+}
+
+### Get user profile by ID (replace with actual ID from registration response)
+GET {{LibHub.UserService_HostAddress}}/api/users/182edbac-eb43-4ff8-a94e-8166a36fe29f
+Accept: application/json
+
+### Login user (placeholder - returns empty token)
+POST {{LibHub.UserService_HostAddress}}/api/users/login
+Content-Type: application/json
+
+{
+  "email": "john.doe@example.com",
+  "password": "SecurePassword123!"
+}
+
+###
